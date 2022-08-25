@@ -2,7 +2,6 @@
 
 namespace app\controller;
 
-use App\Services\Wechat;
 use EasyWeChat\Factory;
 use support\Request;
 use Symfony\Component\HttpFoundation\HeaderBag;
@@ -10,13 +9,6 @@ use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
 class Index
 {
-    protected $service;
-
-    public function __construct()
-    {
-        $this->service = new Wechat();
-    }
-
     public function index(Request $request)
     {
         $config = [
