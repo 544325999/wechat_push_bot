@@ -19,10 +19,13 @@ class WechatTmpl
 
     protected function exec($wechatConfig)
     {
+        $token = $this->getAccessToken($wechatConfig['app_id'], $wechatConfig['secret']);
+
+
+
         $weatherData = $this->getWeather($wechatConfig['weather_key'], $wechatConfig['region']);
         $noteData = $this->getCiBa();
         $birthdayData = $this->getBirthday($wechatConfig['birthday1']);
-        $token = $this->getAccessToken($wechatConfig['app_id'], $wechatConfig['secret']);
         // 组装请求数据
         $postData = $this->makePostData($wechatConfig['template_id'],
             $wechatConfig['region'],
