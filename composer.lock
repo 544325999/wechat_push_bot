@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b57b36eadadedd01f24bef2eec6f94ea",
+    "content-hash": "9fa8caa72e86afbe401f952b7c6e6559",
     "packages": [
         {
             "name": "easywechat-composer/easywechat-composer",
@@ -2082,6 +2082,90 @@
                 "crontab"
             ],
             "time": "2022-08-01T10:24:22+00:00"
+        },
+        {
+            "name": "workerman/http-client",
+            "version": "v1.0.9",
+            "dist": {
+                "type": "zip",
+                "url": "https://mirrors.cloud.tencent.com/repository/composer/workerman/http-client/v1.0.9/workerman-http-client-v1.0.9.zip",
+                "reference": "282332a68d1247eb079db1408d93448f4e53775e",
+                "shasum": ""
+            },
+            "require": {
+                "workerman/psr7": ">=1.4.3",
+                "workerman/workerman": "^4.0.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Workerman\\Http\\": "./src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "homepage": "http://www.workerman.net",
+            "time": "2022-03-24T03:41:27+00:00"
+        },
+        {
+            "name": "workerman/psr7",
+            "version": "v1.4.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://mirrors.cloud.tencent.com/repository/composer/workerman/psr7/v1.4.4/workerman-psr7-v1.4.4.zip",
+                "reference": "8f163224ed5bb93fb210da9211651fcd88acb97b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ],
+                "psr-4": {
+                    "Workerman\\Psr7\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
+                }
+            ],
+            "description": "PSR-7 message implementation that also provides common utility methods",
+            "keywords": [
+                "http",
+                "message",
+                "request",
+                "response",
+                "stream",
+                "uri",
+                "url"
+            ],
+            "time": "2020-08-31T09:54:31+00:00"
         },
         {
             "name": "workerman/webman-framework",
