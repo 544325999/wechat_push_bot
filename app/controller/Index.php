@@ -36,6 +36,30 @@ class Index
         return $response->getContent();
     }
 
+    public function lulu(Request $request)
+    {
+        $config = [
+            'app_id' => getenv('app_id'),
+            'secret' => getenv('app_secret'),
+            'token' => getenv('token'),
+            'response_type' => 'array',
+        ];
+        $app = Factory::officialAccount($config);
+        $symfony_request = new SymfonyRequest($request->get(), $request->post(), [], $request->cookie(), [], [], $request->rawBody());
+        $symfony_request->headers = new HeaderBag($request->header());
+        $app->rebind('request', $symfony_request);
+
+        $message = XML::parse($symfony_request->getContent());
+
+        $service = new Account($message);
+        if (isset($message['MsgType'])) {
+            $app->server->push([$service, $message['MsgType']]);
+        }
+
+        $response = $app->server->serve();
+        return $response->getContent();
+    }
+
     public function view(Request $request)
     {
         return view('index/view', ['name' => 'webman']);
