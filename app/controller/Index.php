@@ -49,9 +49,8 @@ class Index
         $symfony_request = new SymfonyRequest($request->get(), $request->post(), [], $request->cookie(), [], [], $request->rawBody());
         $symfony_request->headers = new HeaderBag($request->header());
         $app->rebind('request', $symfony_request);
-
-        $message = XML::parse($symfony_request->getContent());
-
+//        $message = XML::parse($symfony_request->getContent());
+        $message = $app->server->getMessage();
         $service = new Account($message);
         if (isset($message['MsgType'])) {
             $app->server->push([$service, $message['MsgType']]);
