@@ -42,6 +42,7 @@ class Index
             'app_id' => getenv('app_id'),
             'secret' => getenv('app_secret'),
             'token' => getenv('token'),
+            'aes_key' => getenv('aes_key'),
             'response_type' => 'array',
         ];
         $app = Factory::officialAccount($config);
