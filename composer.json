@@ -30,8 +30,7 @@
     "overtrue/wechat": "^4.2",
     "nesbot/carbon": "^2.61",
     "workerman/crontab": "^1.0",
-    "vlucas/phpdotenv": "^5.4",
-    "workerman/http-client": "^1.0"
+    "vlucas/phpdotenv": "^5.4"
   },
   "suggest": {
     "ext-event": "For better performance. "

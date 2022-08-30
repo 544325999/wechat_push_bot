@@ -4,13 +4,11 @@ namespace app\controller;
 
 use App\Services\Account;
 use App\Services\MiIoService;
-use App\Services\WechatTmpl;
 use EasyWeChat\Factory;
 use EasyWeChat\Kernel\Support\XML;
 use support\Request;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
-use Workerman\Http\Client;
 
 class Index
 {
@@ -45,21 +43,6 @@ class Index
 
     public function json(Request $request)
     {
-        $postData = [
-            'qs' => '%3F_json%3Dtrue%26sid%3Dxiaomiio',
-            'sid' => 'xiaomiio',
-            '_sign' => '7RoEnWWgpjzsTGA0t/VgVXgydtc=',
-            'callback' => 'https://sts.api.io.mi.com/sts',
-            'user' => '18519230486',
-            'hash' => strtoupper(md5('ss544325999')),
-            '_json' => true,
-        ];
-        $client = new Client();
-        $client->post('https://account.xiaomi.com/pass/serviceLoginAuth2', $postData, function ($response) {
-            echo $response->getBody();
-        }, function ($exception) {
-            echo $exception;
-        });
         return json(['code' => 0, 'msg' => 'ok']);
     }
 
@@ -102,7 +85,4 @@ class Index
             return '关闭失败';
         }
     }
-
-
-
 }
