@@ -15,7 +15,6 @@
 use Dotenv\Dotenv;
 use support\Log;
 use Webman\Bootstrap;
-use Webman\Config;
 use Webman\Route;
 use Webman\Middleware;
 use Webman\Util;
