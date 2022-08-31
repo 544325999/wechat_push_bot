@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b57b36eadadedd01f24bef2eec6f94ea",
+    "content-hash": "aacf7c26260380879aac5d64fdcc95f3",
     "packages": [
         {
             "name": "easywechat-composer/easywechat-composer",
@@ -2045,6 +2045,27 @@
                 "environment"
             ],
             "time": "2021-12-12T23:22:04+00:00"
+        },
+        {
+            "name": "webman/log",
+            "version": "v1.0.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://mirrors.cloud.tencent.com/repository/composer/webman/log/v1.0.7/webman-log-v1.0.7.zip",
+                "reference": "a3d26b90e2f495bbe7ee0a3a1b783b7ac6f04b76",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Webman\\Log\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Webman plugin webman/log",
+            "time": "2022-08-26T14:09:13+00:00"
         },
         {
             "name": "workerman/crontab",
