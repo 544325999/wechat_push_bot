@@ -4,6 +4,8 @@ namespace app\controller;
 
 use App\Services\Account;
 use App\Services\MiIoService;
+use App\Services\TeslaService;
+use App\Services\WechatTmpl;
 use EasyWeChat\Factory;
 use EasyWeChat\Kernel\Support\XML;
 use support\Request;
@@ -70,43 +72,9 @@ class Index
         return json(['code' => 0, 'msg' => 'ok']);
     }
 
-    /**
-     * 开启空调
-     * @return string
-     */
-    public function turnOnAirConditioner()
+    public function test()
     {
-        $config = config('mio');
-        $params = [
-            ['did' => $config['air_conditioner_did'], 'siid' => 2, 'piid' => 1, 'value' => true],
-            ['did' => $config['air_conditioner_did'], 'siid' => 2, 'piid' => 2, 'value' => 1],
-        ];
-        try {
-            $service = new MiIoService();
-            $service::setMioSpec($params);
-            return '开启成功';
-        } catch (\Exception $exception) {
-            return '开启失败';
-        }
+//        (new WechatTmpl())->index();
     }
 
-    /**
-     * 关闭空调
-     * @return string
-     */
-    public function turnOffAirConditioner()
-    {
-        $config = config('mio');
-
-        $params = [
-            ['did' => $config['air_conditioner_did'], 'siid' => 2, 'piid' => 1, 'value' => false],
-        ];
-        try {
-            $service = new MiIoService();
-            $service::setMioSpec($params);
-            return '已关闭';
-        } catch (\Exception $exception) {
-            return '关闭失败';
-        }
-    }
 }

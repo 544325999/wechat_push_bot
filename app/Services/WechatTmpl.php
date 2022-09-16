@@ -21,8 +21,6 @@ class WechatTmpl
     {
         $token = $this->getAccessToken($wechatConfig['app_id'], $wechatConfig['secret']);
 
-
-
         $weatherData = $this->getWeather($wechatConfig['weather_key'], $wechatConfig['region']);
         $noteData = $this->getCiBa();
         $birthdayData = $this->getBirthday($wechatConfig['birthday1']);

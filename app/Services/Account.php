@@ -3,26 +3,33 @@
 namespace App\Services;
 
 use app\controller\Index;
-use EasyWeChat\Kernel\Messages\Text;
 
 class Account
 {
     protected $message;
+
+    protected $res;
 
     public function __construct($mes)
     {
         $this->message = $mes;
     }
 
-    public function text()
+    public function text() :string
     {
         $content = $this->message['Content'] ?? '';
-        if ($content == '打开空调') {
-            return (new Index())->turnOnAirConditioner();
-        } else if ($content == '关闭空调') {
-            return (new Index())->turnOffAirConditioner();
+        $res = (new AccountService())->textHandler($content);
+        return $res ?? $content;
+    }
+
+    public function voice()
+    {
+        // 语音识别消息
+        if (isset($this->message['Recognition']) && $this->message['Recognition']) {
+            $res = (new AccountService())->textHandler($this->message['Content']);
+            return $res ?? $this->message['Content'];
         }
-        return new Text($content);
+        return '收到语音消息';
     }
 
 
@@ -30,6 +37,7 @@ class Account
     {
         // 根据类型去实现不同格式消息的处理方法
         $message = [
+            'text' => '收到文本消息',
             'event' => '收到事件消息',
             'image' => '收到图片消息',
             'voice' => '收到语音消息',
