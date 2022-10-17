@@ -3,6 +3,7 @@
 namespace app\controller;
 
 use App\Services\Account;
+use App\Services\SphinxService;
 use App\Services\MiIoService;
 use App\Services\TeslaService;
 use App\Services\WechatTmpl;
@@ -74,6 +75,9 @@ class Index
 
     public function test()
     {
+        $res = (new SphinxService())->run('小明硕士毕业于中国科学院计算所，后在日本京都大学深造');
+        return json(['code' => 0, 'data' => $res]);
+
 //        (new WechatTmpl())->index();
     }
 
