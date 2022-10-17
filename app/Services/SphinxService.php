@@ -13,11 +13,25 @@ class SphinxService
         Finalseg::init();
     }
 
-    public function run($msg)
+    public function run($msg) :array
     {
-        return Jieba::cutForSearch($msg);
+        return $this->filterResult(Jieba::cutForSearch($msg));
     }
 
-
-
+    /**
+     * 过滤停用词
+     * @param $data
+     * @return array
+     */
+    protected function filterResult($data) :array
+    {
+        $contents = file_get_contents(runtime_path().'/dict/dict.txt');
+        $explode = explode(PHP_EOL, trim($contents));
+        return array_filter($data, function ($v) use ($explode) {
+            if (in_array($v, $explode)) {
+                return false;
+            }
+            return true;
+        });
+    }
 }
