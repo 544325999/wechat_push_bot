@@ -11,6 +11,7 @@ class SphinxService
     {
         Jieba::init();
         Finalseg::init();
+        Jieba::loadUserDict(runtime_path().'/dict/dict.txt');
     }
 
     public function run($msg) :array
@@ -25,7 +26,7 @@ class SphinxService
      */
     protected function filterResult($data) :array
     {
-        $contents = file_get_contents(runtime_path().'/dict/dict.txt');
+        $contents = file_get_contents(runtime_path().'/dict/stop_words.txt');
         $explode = explode(PHP_EOL, trim($contents));
         return array_filter($data, function ($v) use ($explode) {
             if (in_array($v, $explode)) {
