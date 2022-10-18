@@ -39,8 +39,8 @@ class SphinxService
         if (count($data['matches']) <= 0) {
             return $data;
         }
-        Db::select()
-        return array_column($data['matches'], 'id');
+        return Db::table('zbp_post')->select(['log_ID','log_Title','log_Intro','log_Content'])
+            ->whereIn('id', array_column($data['matches'], 'id'))->get();
     }
 
     protected function jieba($msg)
