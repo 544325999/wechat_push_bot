@@ -19,19 +19,19 @@ define ( "VER_COMMAND_QUERY",		0x100 );
 define ( "VER_COMMAND_FLUSHATTRS",	0x100 );
 
 /// known searchd status codes
-define ( "SEARCHD_OK",				0 );
-define ( "SEARCHD_ERROR",			1 );
-define ( "SEARCHD_RETRY",			2 );
-define ( "SEARCHD_WARNING",			3 );
-
-/// known match modes
-define ( "SPH_MATCH_ALL",			0 );
-define ( "SPH_MATCH_ANY",			1 );
-define ( "SPH_MATCH_PHRASE",		2 );
-define ( "SPH_MATCH_BOOLEAN",		3 );
-define ( "SPH_MATCH_EXTENDED",		4 );
-define ( "SPH_MATCH_FULLSCAN",		5 );
-define ( "SPH_MATCH_EXTENDED2",		6 );	// extended engine V2 (TEMPORARY, WILL BE REMOVED)
+//define ( "SEARCHD_OK",				0 );
+//define ( "SEARCHD_ERROR",			1 );
+//define ( "SEARCHD_RETRY",			2 );
+//define ( "SEARCHD_WARNING",			3 );
+//
+///// known match modes
+//define ( "SPH_MATCH_ALL",			0 );
+//define ( "SPH_MATCH_ANY",			1 );
+//define ( "SPH_MATCH_PHRASE",		2 );
+//define ( "SPH_MATCH_BOOLEAN",		3 );
+//define ( "SPH_MATCH_EXTENDED",		4 );
+//define ( "SPH_MATCH_FULLSCAN",		5 );
+//define ( "SPH_MATCH_EXTENDED2",		6 );
 
 /// known ranking modes (ext2 only)
 define ( "SPH_RANK_PROXIMITY_BM25",	0 );	///< default mode, phrase proximity major factor and BM25 minor one
