@@ -34,30 +34,30 @@ define ( "VER_COMMAND_FLUSHATTRS",	0x100 );
 //define ( "SPH_MATCH_EXTENDED2",		6 );
 
 /// known ranking modes (ext2 only)
-define ( "SPH_RANK_PROXIMITY_BM25",	0 );	///< default mode, phrase proximity major factor and BM25 minor one
-define ( "SPH_RANK_BM25",			1 );	///< statistical mode, BM25 ranking only (faster but worse quality)
-define ( "SPH_RANK_NONE",			2 );	///< no ranking, all matches get a weight of 1
-define ( "SPH_RANK_WORDCOUNT",		3 );	///< simple word-count weighting, rank is a weighted sum of per-field keyword occurence counts
-define ( "SPH_RANK_PROXIMITY",		4 );
-define ( "SPH_RANK_MATCHANY",		5 );
-define ( "SPH_RANK_FIELDMASK",		6 );
-define ( "SPH_RANK_SPH04",			7 );
-define ( "SPH_RANK_EXPR",			8 );
-define ( "SPH_RANK_TOTAL",			9 );
+//define ( "SPH_RANK_PROXIMITY_BM25",	0 );	///< default mode, phrase proximity major factor and BM25 minor one
+//define ( "SPH_RANK_BM25",			1 );	///< statistical mode, BM25 ranking only (faster but worse quality)
+//define ( "SPH_RANK_NONE",			2 );	///< no ranking, all matches get a weight of 1
+//define ( "SPH_RANK_WORDCOUNT",		3 );	///< simple word-count weighting, rank is a weighted sum of per-field keyword occurence counts
+//define ( "SPH_RANK_PROXIMITY",		4 );
+//define ( "SPH_RANK_MATCHANY",		5 );
+//define ( "SPH_RANK_FIELDMASK",		6 );
+//define ( "SPH_RANK_SPH04",			7 );
+//define ( "SPH_RANK_EXPR",			8 );
+//define ( "SPH_RANK_TOTAL",			9 );
 
 /// known sort modes
-define ( "SPH_SORT_RELEVANCE",		0 );
-define ( "SPH_SORT_ATTR_DESC",		1 );
-define ( "SPH_SORT_ATTR_ASC",		2 );
-define ( "SPH_SORT_TIME_SEGMENTS", 	3 );
-define ( "SPH_SORT_EXTENDED", 		4 );
-define ( "SPH_SORT_EXPR", 			5 );
+//define ( "SPH_SORT_RELEVANCE",		0 );
+//define ( "SPH_SORT_ATTR_DESC",		1 );
+//define ( "SPH_SORT_ATTR_ASC",		2 );
+//define ( "SPH_SORT_TIME_SEGMENTS", 	3 );
+//define ( "SPH_SORT_EXTENDED", 		4 );
+//define ( "SPH_SORT_EXPR", 			5 );
 
 /// known filter types
-define ( "SPH_FILTER_VALUES",		0 );
-define ( "SPH_FILTER_RANGE",		1 );
-define ( "SPH_FILTER_FLOATRANGE",	2 );
-define ( "SPH_FILTER_STRING",	3 );
+//define ( "SPH_FILTER_VALUES",		0 );
+//define ( "SPH_FILTER_RANGE",		1 );
+//define ( "SPH_FILTER_FLOATRANGE",	2 );
+//define ( "SPH_FILTER_STRING",	3 );
 
 /// known attribute types
 define ( "SPH_ATTR_INTEGER",		1 );
