@@ -31,7 +31,7 @@ define ( "VER_COMMAND_FLUSHATTRS",	0x100 );
 //define ( "SPH_MATCH_BOOLEAN",		3 );
 //define ( "SPH_MATCH_EXTENDED",		4 );
 //define ( "SPH_MATCH_FULLSCAN",		5 );
-define ( "SPH_MATCH_EXTENDED2",		6 );
+// define ( "SPH_MATCH_EXTENDED2",		6 );
 
 /// known ranking modes (ext2 only)
 //define ( "SPH_RANK_PROXIMITY_BM25",	0 );	///< default mode, phrase proximity major factor and BM25 minor one
