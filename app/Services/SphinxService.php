@@ -40,7 +40,7 @@ class SphinxService
             return $data;
         }
         return Db::table('zbp_post')->select(['log_ID','log_Title','log_Intro','log_Content'])
-            ->whereIn('id', array_column($data['matches'], 'id'))->get();
+            ->whereIn('log_ID', array_column($data['matches'], 'id'))->get();
     }
 
     protected function jieba($msg)
