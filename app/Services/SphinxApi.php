@@ -31,7 +31,7 @@ define ( "VER_COMMAND_FLUSHATTRS",	0x100 );
 //define ( "SPH_MATCH_BOOLEAN",		3 );
 //define ( "SPH_MATCH_EXTENDED",		4 );
 //define ( "SPH_MATCH_FULLSCAN",		5 );
-//define ( "SPH_MATCH_EXTENDED2",		6 );
+define ( "SPH_MATCH_EXTENDED2",		6 );
 
 /// known ranking modes (ext2 only)
 //define ( "SPH_RANK_PROXIMITY_BM25",	0 );	///< default mode, phrase proximity major factor and BM25 minor one
@@ -60,15 +60,15 @@ define ( "VER_COMMAND_FLUSHATTRS",	0x100 );
 //define ( "SPH_FILTER_STRING",	3 );
 
 /// known attribute types
-define ( "SPH_ATTR_INTEGER",		1 );
-define ( "SPH_ATTR_TIMESTAMP",		2 );
-define ( "SPH_ATTR_ORDINAL",		3 );
-define ( "SPH_ATTR_BOOL",			4 );
-define ( "SPH_ATTR_FLOAT",			5 );
+//define ( "SPH_ATTR_INTEGER",		1 );
+//define ( "SPH_ATTR_TIMESTAMP",		2 );
+//define ( "SPH_ATTR_ORDINAL",		3 );
+//define ( "SPH_ATTR_BOOL",			4 );
+//define ( "SPH_ATTR_FLOAT",			5 );
 define ( "SPH_ATTR_BIGINT",			6 );
 define ( "SPH_ATTR_STRING",			7 );
 define ( "SPH_ATTR_FACTORS",			1001 );
-define ( "SPH_ATTR_MULTI",			0x40000001 );
+//define ( "SPH_ATTR_MULTI",			0x40000001 );
 define ( "SPH_ATTR_MULTI64",			0x40000002 );
 
 /// known grouping functions
