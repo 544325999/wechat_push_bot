@@ -27,7 +27,18 @@ class SphinxService
         $client->SetArrayResult(true);
         $client->SetLimits(1,1000);//要获取所有数据是这里第三个参数控制，默认是1000,太大会影响效率
 //        $client->SetMatchMode(SPH_MATCH_ANY);//这个关闭它，不然会提示警告
-        return $client->Query( $q, $index );
+        return $this->handleResponses($client->Query( $q, $index ));
+    }
+
+    protected function handleResponses($data)
+    {
+        if (!$data) {
+            return false;
+        }
+        if (count($data['matches']) <= 0) {
+            return $data;
+        }
+        return array_column($data['matches'], 'id');
     }
 
     protected function jieba($msg)
@@ -36,7 +47,7 @@ class SphinxService
         foreach ($results as $res) {
             $words[] = '(' . $res . ')';
         }
-        $words[] = '(' . $msg . ')';
+//        $words[] = '(' . $msg . ')';
         return join('|', $words);
     }
 
