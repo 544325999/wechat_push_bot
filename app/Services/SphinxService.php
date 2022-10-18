@@ -4,6 +4,7 @@ namespace App\Services;
 
 use Fukuball\Jieba\Finalseg;
 use Fukuball\Jieba\Jieba;
+use support\Db;
 
 class SphinxService
 {
@@ -38,6 +39,7 @@ class SphinxService
         if (count($data['matches']) <= 0) {
             return $data;
         }
+        Db::select()
         return array_column($data['matches'], 'id');
     }
 
