@@ -17,6 +17,7 @@ class SphinxService
     public function run($msg) :array
     {
         $client = new SphinxApi();
+        $client->SphinxClient();
         $q = $msg; //模拟关键字
 //$mode = SPH_MATCH_ALL;
         $host = "127.0.0.1";// sphinx的服务地址  此处用的是本地服务 切记 不是数据库地址！！！
