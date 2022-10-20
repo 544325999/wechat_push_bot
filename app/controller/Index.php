@@ -2,11 +2,7 @@
 
 namespace app\controller;
 
-use App\Services\Account;
 use App\Services\SphinxService;
-use App\Services\MiIoService;
-use App\Services\TeslaService;
-use App\Services\WechatTmpl;
 use support\Request;
 
 
@@ -14,7 +10,8 @@ class Index
 {
     public function index(Request $request)
     {
-        $res = (new SphinxService())->run($request->get('msg'));
+        $data = $request->all();
+        $res = (new SphinxService())->run($data['msg'], $data['offset'], $data['limit']);
         return json(['code' => 0, 'data' => $res]);
     }
 
