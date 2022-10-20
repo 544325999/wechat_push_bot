@@ -26,7 +26,7 @@ class SphinxService
         $client->SetServer ( $host, $port );
         $client->SetConnectTimeout(10);
         $client->SetArrayResult(true);
-        $client->SetLimits(1,1000);//要获取所有数据是这里第三个参数控制，默认是1000,太大会影响效率
+        $client->SetLimits(1,5);//要获取所有数据是这里第三个参数控制，默认是1000,太大会影响效率
 //        $client->SetMatchMode(SPH_MATCH_ANY);//这个关闭它，不然会提示警告
         return $this->handleResponses($client->Query( $q, $index ));
     }
