@@ -29,9 +29,10 @@ class Index
         return json(['code' => 0, 'msg' => 'ok']);
     }
 
-    public function test()
+    public function test(Request $request)
     {
-//        return json(['code' => 0, 'data' => $res]);
+        $res = (new SphinxService())->test($request->get('msg'));
+        return json(['code' => 0, 'data' => $res]);
     }
 
 }

@@ -15,21 +15,36 @@ class SphinxService
         Jieba::loadUserDict(runtime_path().'/dict/dict.txt');
     }
 
-    public function run($msg)
+    public function run($msg, $offset = 1, $limit = 5)
     {
         $client = new SphinxApi();
         $client->SphinxClient();
         $q = $this->jieba($msg);
-        $host = "127.0.0.1";// sphinx的服务地址  此处用的是本地服务 切记 不是数据库地址！！！
-        $port = 9900;// sphinx监听端口号
-        $index = "test1";   // 此处为配置文件中配置的索引项
+        $host = "127.0.0.1";
+        $port = 9900;
+        $index = "test1";
         $client->SetServer ( $host, $port );
         $client->SetConnectTimeout(10);
         $client->SetArrayResult(true);
-        $client->SetLimits(1,5);//要获取所有数据是这里第三个参数控制，默认是1000,太大会影响效率
-//        $client->SetMatchMode(SPH_MATCH_ANY);//这个关闭它，不然会提示警告
+        $client->SetLimits($offset,$limit);
         return $this->handleResponses($client->Query( $q, $index ));
     }
+
+    public function test($msg, $offset = 1, $limit = 5)
+    {
+        $client = new SphinxApi();
+        $client->SphinxClient();
+        $q = $this->jieba($msg);
+        $host = "127.0.0.1";
+        $port = 9900;
+        $index = "test1";
+        $client->SetServer ( $host, $port );
+        $client->SetConnectTimeout(10);
+        $client->SetArrayResult(true);
+        $client->SetLimits($offset,$limit);
+        return $client->Query( $q, $index );
+    }
+
 
     protected function handleResponses($data)
     {
