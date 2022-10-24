@@ -64,7 +64,6 @@ class SphinxService
         foreach ($results as $res) {
             $words[] = '(' . $res . ')';
         }
-//        $words[] = '(' . $msg . ')';
         return join('|', $words);
     }
 
