@@ -83,4 +83,14 @@ class SphinxService
             return true;
         });
     }
+
+    public static function cleanData()
+    {
+        return Db::table('zbp_post')
+            ->where('log_Status', 1)
+            ->limit(100)
+            ->orderBy('id')
+            ->update(['log_Status' => 0]);
+    }
+
 }
