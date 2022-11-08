@@ -64,6 +64,9 @@ class SphinxService
 
     protected function jieba($msg)
     {
+        if (strlen($msg) > 100) {
+            $msg = substr($msg, 0, 100);
+        }
         $results = $this->filterResult(Jieba::cutForSearch($msg));
         foreach ($results as $res) {
             $words[] = '(' . $res . ')';
