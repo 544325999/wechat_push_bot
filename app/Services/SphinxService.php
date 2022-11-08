@@ -51,6 +51,10 @@ class SphinxService
         if (!$data) {
             return false;
         }
+        if (!isset($data['matches'])) {
+            return  false;
+        }
+
         if (count($data['matches']) <= 0) {
             return $data;
         }
