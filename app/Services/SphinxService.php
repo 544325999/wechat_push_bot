@@ -95,7 +95,7 @@ class SphinxService
     {
         return Db::table('zbp_post')
             ->where('log_Status', 1)
-            ->limit(100)
+            ->limit(20)
             ->orderBy('log_ID')
             ->update(['log_Status' => 0]);
     }
