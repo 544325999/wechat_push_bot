@@ -97,7 +97,7 @@ class SphinxService
             ->where('log_Status', 1)
             ->limit(20)
             ->orderBy('log_ID')
-            ->update(['log_Status' => 0]);
+            ->update(['log_Status' => 0, 'log_PostTime' => time()]);
     }
 
 }
