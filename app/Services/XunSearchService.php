@@ -19,6 +19,12 @@ class XunSearchService
         return $this->handleResponses($search->search());
     }
 
+    public function scws($msg)
+    {
+        $tokenizer = new \XSTokenizerScws;   // 直接创建实例
+        return $tokenizer->getResult($msg);
+    }
+
     protected function handleResponses($data)
     {
         $result = [];

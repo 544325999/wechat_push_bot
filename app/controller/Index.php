@@ -39,5 +39,10 @@ class Index
         $res = (new XunSearchService())->run($data['msg'], $data['offset'], $data['limit']);
         return json(['code' => 0, 'data' => $res]);
     }
-
+    public function scwc(Request $request)
+    {
+        $data = $request->all();
+        $res = (new XunSearchService())->scws($data['msg']);
+        return json(['code' => 0, 'data' => $res]);
+    }
 }
