@@ -27,6 +27,8 @@ class SphinxService
         $client->SetConnectTimeout(10);
         $client->SetArrayResult(true);
         $client->SetLimits($offset,$limit);
+        $client->SetFieldWeights(['log_Title' => 3, 'log_Intro' => 1, 'log_Content' => 1]);
+        $client->SetSortMode ('SPH_SORT_EXPR','@weight');//按照权重排序
         return $this->handleResponses($client->Query( $q, $index ));
     }
 
@@ -42,6 +44,7 @@ class SphinxService
         $client->SetConnectTimeout(10);
         $client->SetArrayResult(true);
         $client->SetLimits($offset,$limit);
+        $client->SetSortMode ('SPH_SORT_EXPR','@weight');//按照权重排序
         $client->SetFieldWeights(['log_Title' => 3, 'log_Intro' => 1, 'log_Content' => 1]);
         return $client->Query( $q, $index );
     }
