@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b266a76342ed53066016d847f6bd8706",
+    "content-hash": "19a6dc9ec550706439694ac6e608efbb",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -157,6 +157,58 @@
                 "result"
             ],
             "time": "2022-07-30T15:56:11+00:00"
+        },
+        {
+            "name": "hightman/xunsearch",
+            "version": "1.4.17",
+            "dist": {
+                "type": "zip",
+                "url": "https://mirrors.cloud.tencent.com/repository/composer/hightman/xunsearch/1.4.17/hightman-xunsearch-1.4.17.zip",
+                "reference": "3803e5a7a3dba462b656d995770f0b8254c30f06",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "lib-pcre": "*",
+                "php": ">=5.3.0"
+            },
+            "bin": [
+                "util/xs"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "hightman\\xunsearch\\": "wrapper/yii2-ext/"
+                },
+                "classmap": [
+                    "lib/",
+                    "wrapper/yii-ext/"
+                ]
+            },
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "hightman",
+                    "email": "hightman@twomice.net",
+                    "role": "Founder and project leader"
+                }
+            ],
+            "description": "xunsearch php sdk, include yii, yii2 supports",
+            "homepage": "http://www.xunsearch.com/",
+            "keywords": [
+                "search engine",
+                "xunsearch",
+                "yii",
+                "yii2"
+            ],
+            "time": "2022-08-11T12:39:26+00:00"
         },
         {
             "name": "illuminate/container",
@@ -1742,7 +1794,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "fukuball/jieba-php": 20
+        "fukuball/jieba-php": 20,
+        "hightman/xunsearch": 10
     },
     "prefer-stable": false,
     "prefer-lowest": false,

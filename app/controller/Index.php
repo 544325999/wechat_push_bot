@@ -3,6 +3,7 @@
 namespace app\controller;
 
 use App\Services\SphinxService;
+use App\Services\XunSearchService;
 use support\Request;
 
 
@@ -29,6 +30,13 @@ class Index
     public function test(Request $request)
     {
         $res = (new SphinxService())->test($request->get('msg'));
+        return json(['code' => 0, 'data' => $res]);
+    }
+
+    public function xun(Request $request)
+    {
+        $data = $request->all();
+        $res = (new XunSearchService())->run($data['msg'], $data['offset'], $data['limit']);
         return json(['code' => 0, 'data' => $res]);
     }
 
