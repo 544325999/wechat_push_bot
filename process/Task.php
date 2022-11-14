@@ -1,6 +1,7 @@
 <?php
 namespace process;
 
+use App\Services\FanyunService;
 use App\Services\RefreshTeslaToken;
 use App\Services\WechatTmpl;
 use Workerman\Crontab\Crontab;
@@ -18,5 +19,11 @@ class Task
         new Crontab('0 */7 * * *', function(){
             (new RefreshTeslaToken())->handle();
         });
+
+        // 凡云自动签到
+        new Crontab('2 7 * * *', function(){
+            (new FanyunService())->login();
+        });
+
     }
 }
