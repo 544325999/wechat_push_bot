@@ -8,7 +8,7 @@ class Task
 {
     public function onWorkerStart()
     {
-        new Crontab('1 1 2,4,6,8,10 * * *', function(){
+        new Crontab('1 1 * * * *', function(){
             SphinxService::cleanData();
         });
     }
