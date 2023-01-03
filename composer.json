@@ -36,7 +36,8 @@
     "illuminate/database": "^7.30",
     "illuminate/pagination": "^7.30",
     "hightman/xunsearch": "*@beta",
-    "elasticsearch/elasticsearch": "^7.11"
+    "elasticsearch/elasticsearch": "^7.11",
+    "yzh52521/webman-mailer": "^1.0"
   },
   "suggest": {
     "ext-event": "For better performance. "

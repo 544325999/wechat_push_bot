@@ -53,6 +53,7 @@ class SphinxService
     protected function handleResponses($data)
     {
         if (!$data) {
+            Mail::send();
             return false;
         }
         if (!isset($data['matches'])) {

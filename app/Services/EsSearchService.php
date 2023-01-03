@@ -14,7 +14,7 @@ class EsSearchService
         $this->es = ClientBuilder::create()->build();
     }
 
-    public function run()
+    public function run($msg)
     {
         $params = [
             'index' => 'blog',
@@ -22,7 +22,7 @@ class EsSearchService
             'body' => [
                 'query' => [
                     'match' => [
-                        'title' => '螃蟹'
+                        'title' => $msg
                     ]
                 ]
             ],

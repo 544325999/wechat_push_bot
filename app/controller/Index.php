@@ -2,9 +2,11 @@
 
 namespace app\controller;
 
+use App\Services\EsSearchService;
 use App\Services\SphinxService;
 use App\Services\XunSearchService;
 use support\Request;
+use yzh52521\mailer\Mailer;
 
 
 class Index
@@ -44,5 +46,21 @@ class Index
         $data = $request->all();
         $res = (new XunSearchService())->scws($data['msg']);
         return json(['code' => 0, 'data' => $res]);
+    }
+
+    public function es(Request $request)
+    {
+        $data = $request->all();
+        $res = (new EsSearchService())->run($data['msg']);
+        return json(['code' => 0, 'data' => $res]);
+    }
+
+    public function xx()
+    {
+        return Mailer::setFrom('10086@qq.com')
+            ->setTo('544325999@qq.com')
+            ->setSubject('异常邮件')
+            ->setTextBody('sphinx')
+            ->send();
     }
 }
