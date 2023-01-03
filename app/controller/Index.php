@@ -54,13 +54,4 @@ class Index
         $res = (new EsSearchService())->run($data['msg']);
         return json(['code' => 0, 'data' => $res]);
     }
-
-    public function xx()
-    {
-        return Mailer::setFrom('10086@qq.com')
-            ->setTo('544325999@qq.com')
-            ->setSubject('异常邮件')
-            ->setTextBody('sphinx')
-            ->send();
-    }
 }

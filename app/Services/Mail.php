@@ -8,7 +8,7 @@ class Mail
 {
     public static function send()
     {
-        return Mailer::setFrom('10086@qq.com')
+        return Mailer::setFrom('544325999@qq.com')
             ->setTo('17600088849@163.com')
             ->setSubject('异常邮件')
             ->setTextBody('sphinx')

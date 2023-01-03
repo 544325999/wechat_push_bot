@@ -4,7 +4,7 @@ return [
     'enable' => true,
     'mailer' => [
         'scheme'   => 'smtp',// "smtps": using TLS, "smtp": without using TLS.
-        'host'     => 'smtp.gmail.com', // 服务器地址
+        'host'     => getenv('mail_host'), // 服务器地址
         'username' => getenv('mail_user'), //用户名
         'password' => getenv('mail_pwd'), // 密码
         'port'     => 465, // SMTP服务器端口号,一般为25
