@@ -4,6 +4,7 @@ namespace App\Services;
 
 use Fukuball\Jieba\Finalseg;
 use Fukuball\Jieba\Jieba;
+use GuzzleHttp\Client;
 use support\Db;
 
 class SphinxService
@@ -53,7 +54,7 @@ class SphinxService
     protected function handleResponses($data)
     {
         if (!$data) {
-            Mail::send();
+            $this->sendWechat();
             return false;
         }
         if (!isset($data['matches'])) {
@@ -103,6 +104,22 @@ class SphinxService
             ->limit(20)
             ->orderBy('log_ID')
             ->update(['log_Status' => 0, 'log_PostTime' => time()]);
+    }
+
+    public function sendWechat()
+    {
+        $client = new Client([
+            'base_uri' => 'https://sctapi.ftqq.com/',
+            'headers' => [
+                'User-Agent' => 'APP/com.xiaomi.mihome APPV/6.0.103 iosPassportSDK/3.9.0 iOS/14.4 miHSTS'
+            ]
+        ]);
+        return $client->post('SCT191106T301Fl1E0bOvjgIKIaTxD0hGw.send', [
+            'json' => [
+                'title' => '异常提醒',
+                'desp' => 'sphinx error'
+            ]
+        ]);
     }
 
 }

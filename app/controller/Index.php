@@ -3,6 +3,7 @@
 namespace app\controller;
 
 use App\Services\EsSearchService;
+use App\Services\Mail;
 use App\Services\SphinxService;
 use App\Services\XunSearchService;
 use support\Request;
