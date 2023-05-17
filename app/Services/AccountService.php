@@ -24,12 +24,15 @@ class AccountService
      * 开启空调
      * @return string
      */
-    protected function turnOnAirConditioner() :string
+    public function turnOnAirConditioner() :string
     {
         $config = config('mio');
         $params = [
             ['did' => $config['air_conditioner_did'], 'siid' => 2, 'piid' => 1, 'value' => true],
+            // 0 - Auto 1 - Cool 制冷  2 - Dry 3 - Heat 4 - Fan
             ['did' => $config['air_conditioner_did'], 'siid' => 2, 'piid' => 2, 'value' => 1],
+            // 温度 16-30
+            ['did' => $config['air_conditioner_did'], 'siid' => 2, 'piid' => 3, 'value' => 24],
         ];
         try {
             $service = new MiIoService();

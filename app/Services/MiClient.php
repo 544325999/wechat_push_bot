@@ -5,6 +5,7 @@ namespace App\Services;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
+use support\Log;
 
 class MiClient
 {
@@ -25,12 +26,14 @@ class MiClient
         $client = $this->getClient();
         $response = $client->get('pass/serviceLogin?_json=true&sid='.$sid);
         $data = $this->handleResponse($response);
+        Log::info('serviceLogin:'.json_encode($data));
+
         $result = $this->loginAuth($data, $user, $password);
         if($result['code'] != 0 ) {
             // error
             return false;
         }
-
+        Log::info('serviceLoginAuth2:'.json_encode($result));
         $data = $this->loginIo($result);
         file_put_contents($filePath, json_encode($data));
         return $data;
